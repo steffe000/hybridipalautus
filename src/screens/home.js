@@ -5,7 +5,7 @@ import { screenkeys } from './_index';
 
 export const Home = ({ navigation }) => {
     return (<View style={styles.main}>
-        <Text>L9 Practice</Text>
+        <Text>L9 Practices</Text>
         { screenkeys.map((skey) => skey !== 'home' && <View style={styles.btn} key={"home-"+skey}>
                 <Button style={styles.btn} title={skey} onPress={() => navigation.navigate(skey)}/>
             </View>

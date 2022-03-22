@@ -16,7 +16,9 @@ export const initPath = () => new Promise((res) => {
 
 // exeption, not a promise
 export const getPath = () => {
-    if (Platform.OS === 'android') return RNFS.DocumentDirectoryPath + subDir
+    // if (Platform.OS === 'android') return RNFS.DocumentDirectoryPath + subDir
+    // else if (Platform.OS === 'ios') return RNFS.MainBundlePath + subDir
+    if (Platform.OS === 'android') return RNFS.ExternalStorageDirectoryPath + subDir
     else if (Platform.OS === 'ios') return RNFS.MainBundlePath + subDir
 }
 
