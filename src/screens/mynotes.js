@@ -1,5 +1,6 @@
+import { TestScheduler } from 'jest';
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import { listNotes } from '../utils/myfs';
 
 export const MyNotes = ({ navigation }) => {
@@ -23,13 +24,33 @@ export const MyNotes = ({ navigation }) => {
     }
 
     return (<View>
-        <Text>my-notes</Text>
+        <Text style={styles.head} >my-notes</Text>
         {
-            notes.map((note, i) => (<View key={`note-${i}`}>
-                <Button title={note} onPress={() => openEditor(note)}></Button>
+            notes.map((note, i) => (<View style={styles.butn} key={`note-${i}`}>
+                <Button  color="black"  title={note} onPress={() => openEditor(note)}></Button>
             </View>))
         }
-    </View>);
+        </View>);
 }
+
+
+const styles = StyleSheet.create({
+        head: {
+            color: 'black',
+            textAlign: 'center',
+            fontSize: 20,
+            padding: 20,
+        },
+        butn: {
+            paddingTop: 10,
+            paddingLeft: 10,
+            paddingRight: 10,
+
+        },
+   });
+
+
+ 
+ 
 
 export default MyNotes;

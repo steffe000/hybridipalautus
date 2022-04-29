@@ -3,13 +3,15 @@ import Home from './home';
 import MyNotes from './mynotes';
 import NoteEditor from './note-editor';
 import Dev from './dev';
+import { Settings } from './settings';
 
 export const screenkeys = [
     'home',
     'mynotes',
     'note-editor',
     'create-note',
-    'dev'
+    'dev',
+    'settings'
 ];
 
 export const screencomponents = [
@@ -17,7 +19,8 @@ export const screencomponents = [
     MyNotes,
     NoteEditor,
     CreateNote,
-    Dev
+    Dev,
+    Settings
 ];
 
 export default screenkeys.map((skey, i) => {

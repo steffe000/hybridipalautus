@@ -5,9 +5,9 @@ import { screenkeys } from './_index';
 
 export const Home = ({ navigation }) => {
     return (<View style={styles.main}>
-        <Text>L9 Practicess</Text>
+        <Text style={styles.header}>NOTE APP</Text>
         { screenkeys.map((skey) => skey !== 'home' && <View style={styles.btn} key={"home-"+skey}>
-                <Button style={styles.btn} title={skey} onPress={() => navigation.navigate(skey)}/>
+                <Button color="black" style={styles.btn} title={skey} onPress={() => navigation.navigate(skey)}/>
             </View>
         )}
     </View>);
@@ -15,11 +15,20 @@ export const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     main: {
-
+        
     },
     btn: {
-        marginTop: 16
-    }
+        marginTop: 16,
+        marginLeft: 40,
+        marginRight: 40,
+        
+    },
+    header: {
+        color: 'black',
+        textAlign: 'center',
+        fontSize: 20,
+        marginTop: 20,
+    },
 })
 
 export default Home;

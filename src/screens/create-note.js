@@ -4,7 +4,7 @@ import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { writeNote } from '../utils/myfs';
 
 export const CreateNote = () => {
-    const _tin = { min: 1, max: 10, format: '.txt' }; // min,max title size
+    const _tin = { min: 1, max: 10, format: '.txt' }; 
     const [ title, titleChange ] = React.useState('');
     const [ content, contentChange ] = React.useState('');
 
@@ -21,7 +21,7 @@ export const CreateNote = () => {
     };
 
     return (<View>
-        <Text>create-note</Text>
+        <Text style={styles.text}>CREATE NOTES</Text>
         <TextInput
             style={styles.tinput}
             onChangeText={titleChange}
@@ -35,11 +35,18 @@ export const CreateNote = () => {
             placeholder='content here'
             multiline={true}
         />
-        <Button title='Save' onPress={() => save()} />
+        <Button color="black" style={styles.nappi} title='Save' onPress={() => save()} />
     </View>);
 }
 
 const styles = StyleSheet.create({
+    text: {
+        paddingTop: 10,
+        color:'black',
+        textAlign: 'center',
+        fontSize: 20,
+    },
+    
     tarea: {
         height: 160,
         margin: 12,
@@ -51,7 +58,8 @@ const styles = StyleSheet.create({
         margin: 12,
         borderWidth: 1,
         padding: 10
-    } 
+    },
+
 });
 
 export default CreateNote;
